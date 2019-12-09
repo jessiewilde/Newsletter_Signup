@@ -10,11 +10,11 @@ app.get("/", function(req,res){
   res.sendFile(__dirname + "/signup.html");
 });
 app.post("/", function (req,res){
-  var firstName= req.body.fName;
-  var lastName= req.body.lName;
-  var email=req.body.email;
+  let firstName= req.body.fName;
+  let lastName= req.body.lName;
+  let email=req.body.email;
 
-  var data= {
+  let data= {
     members:[
       {
         email_address:email,
@@ -26,9 +26,9 @@ app.post("/", function (req,res){
       }
     ]
   };
-  var jsonData=JSON.stringify(data);
+  let jsonData=JSON.stringify(data);
 
-  var options={
+  let options={
     url: "https://us15.api.mailchimp.com/3.0/lists/d8eca4ed2a",
     method: "POST",
     headers:{
